@@ -10,15 +10,15 @@ import UIKit
 
  When updating for an incoming UITraitCollection, if it matches `self.traitCollection`, `behavior` will be executed, else `counterBehavior` will be executed if it exists.
  */
-struct AdaptiveBehavior: AdaptiveElement {
+public struct AdaptiveBehavior: AdaptiveElement {
 
-    typealias Behavior = () -> Void
+    public typealias Behavior = () -> Void
 
-    let traitCollection: UITraitCollection
-    let behavior: Behavior
-    let counterBehavior: Behavior?
+    public let traitCollection: UITraitCollection
+    public let behavior: Behavior
+    public let counterBehavior: Behavior?
 
-    func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
+    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
         if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
             behavior()
         } else {

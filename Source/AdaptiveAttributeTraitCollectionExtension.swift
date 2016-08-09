@@ -8,7 +8,7 @@ import UIKit
 /**
  This extension provides a mapping between AdaptiveAttribute and UITraitCollection.
  */
-extension UITraitCollection {
+public extension UITraitCollection {
 
     static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
         let traitCollections = attributes.map { $0.generateTraitCollection() }

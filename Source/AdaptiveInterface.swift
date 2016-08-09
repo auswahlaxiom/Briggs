@@ -9,7 +9,7 @@ import UIKit
  An AdaptiveInterface manages a collection of AdaptiveElements, and can add elements that are only active under certain UITraitCollection scenarios.
  Extension methods provide conveniences for adding common elements like UIViews and NSLayoutConstraints, which append to `adaptiveElements`. For this reason, AdaptiveInterface is a class-only protocol to simplify the "mutating" story.
  */
-protocol AdaptiveInterface: class, AdaptiveElement {
+public protocol AdaptiveInterface: class, AdaptiveElement {
 
     var adaptiveElements: [AdaptiveElement] { get set }
 }
@@ -17,11 +17,11 @@ protocol AdaptiveInterface: class, AdaptiveElement {
 /**
  The default implementation of `updateForTraitCollection` forwards `updateForTraitCollection` to each item in `adaptiveElements`.
  */
-extension AdaptiveInterface {
+public extension AdaptiveInterface {
 
     // MARK: AdaptiveInterface
 
-    func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
+    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
         // Update all adaptive elements for which the trait collection does not match first to avoid conflicting behaviors being active at the same time
         adaptiveElements.filter { incomingTraitCollection.containsTraitsInCollection($0.traitCollection) == false }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
         adaptiveElements.filter { incomingTraitCollection.containsTraitsInCollection($0.traitCollection) == true }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
@@ -32,14 +32,14 @@ extension AdaptiveInterface {
  Convenience methods for adding adaptive behaviors, constraints, and views. 
  Each has a raw form, which takes a UITraitCollection, and two wrappers that take one or more AdaptiveAttributes.
  */
-extension AdaptiveInterface {
+public extension AdaptiveInterface {
 
     // MARK: Add Behavior
 
     /**
      Add a behavior for a given UITraitCollection
      */
-    func addBehaviorFor(traitCollection: UITraitCollection, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehaviorFor(traitCollection: UITraitCollection, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let adaptiveBehavior = AdaptiveBehavior(traitCollection: traitCollection, behavior: behavior, counterBehavior: counterBehavior)
 
         adaptiveElements.append(adaptiveBehavior)
@@ -48,7 +48,7 @@ extension AdaptiveInterface {
     /**
      Add a behavior for a given set of AdaptiveAttributes
      */
-    func addBehaviorFor(attributes: [AdaptiveAttribute], behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehaviorFor(attributes: [AdaptiveAttribute], behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
@@ -56,7 +56,7 @@ extension AdaptiveInterface {
     /**
      Convenience for adding behavior for a single AdaptiveAttribute
      */
-    func addConstraintsFor(attribute: AdaptiveAttribute, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addConstraintsFor(attribute: AdaptiveAttribute, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
@@ -66,7 +66,7 @@ extension AdaptiveInterface {
     /**
      Add an array of constraints for a given UITraitCollection
      */
-    func addConstraintsFor(traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
+    public func addConstraintsFor(traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
         let container = AdaptiveConstraintContainer(traitCollection: traitCollection, constraints: constraints)
 
         adaptiveElements.append(container)
@@ -75,7 +75,7 @@ extension AdaptiveInterface {
     /**
      Add a number of constraints for a given set of AdaptiveAttributes
      */
-    func addConstraintsFor(attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
+    public func addConstraintsFor(attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addConstraintsFor(traitCollection, constraints: constraints)
     }
@@ -83,7 +83,7 @@ extension AdaptiveInterface {
     /**
      Convenience for adding constrants for a single AdaptiveAttribute
      */
-    func addConstraintsFor(attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
+    public func addConstraintsFor(attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addConstraintsFor(traitCollection, constraints: constraints)
     }
@@ -93,7 +93,7 @@ extension AdaptiveInterface {
     /**
      Add a view and constarints for a given UITraitCollection
      */
-    func addViewFor(traitCollection: UITraitCollection, view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(traitCollection: UITraitCollection, view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
         // Temporarily add view to parent, so constraints can be created if necessary. Will be removed in updateForTraitCollection if necessary.
         parent.addSubview(view)
 
@@ -111,7 +111,7 @@ extension AdaptiveInterface {
     /**
      Add a view and constarints for a given set of AdaptiveAttributes
      */
-    func addViewFor(attributes: [AdaptiveAttribute], view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(attributes: [AdaptiveAttribute], view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addViewFor(traitCollection, view: view, to: parent, withConstraints: constraintBuilder)
     }
@@ -119,7 +119,7 @@ extension AdaptiveInterface {
     /**
      Convenience for adding a view and constarints for a single AdaptiveAttribute
      */
-    func addViewFor(attribute: AdaptiveAttribute, view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(attribute: AdaptiveAttribute, view: UIView, to parent: UIView, @autoclosure withConstraints constraintBuilder: () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addViewFor(traitCollection, view: view, to: parent, withConstraints: constraintBuilder)
     }

@@ -10,12 +10,12 @@ import UIKit
 
  When updating for an incoming UITraitCollection, if it matches `self.traitCollection`, the `constraints` will be activated, else deactivated.
  */
-struct AdaptiveConstraintContainer: AdaptiveElement {
+public struct AdaptiveConstraintContainer: AdaptiveElement {
 
-    let traitCollection: UITraitCollection
-    let constraints: [NSLayoutConstraint]
+    public let traitCollection: UITraitCollection
+    public let constraints: [NSLayoutConstraint]
 
-    func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
+    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
         if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
             NSLayoutConstraint.activateConstraints(constraints)
         } else {

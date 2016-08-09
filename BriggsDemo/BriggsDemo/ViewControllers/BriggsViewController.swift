@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import Briggs
 
 /**
  A view controller that uses Briggs Adaptive API to elegantly achieve the following adaptive behaviors:
