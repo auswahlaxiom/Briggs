@@ -10,16 +10,16 @@ import UIKit
  */
 public extension UITraitCollection {
 
-    static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
+    public static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
         let traitCollections = attributes.map { $0.generateTraitCollection() }
         return self.init(traitsFromCollections: traitCollections)
     }
 
-    func contains(attribute attribute: AdaptiveAttribute) -> Bool {
+    public func contains(attribute attribute: AdaptiveAttribute) -> Bool {
         return containsTraitsInCollection(attribute.generateTraitCollection())
     }
 
-    var adaptiveAttributes: [AdaptiveAttribute] {
+    public var adaptiveAttributes: [AdaptiveAttribute] {
         var attributes: [AdaptiveAttribute] = []
 
         switch userInterfaceIdiom {
