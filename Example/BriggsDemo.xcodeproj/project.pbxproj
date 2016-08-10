@@ -75,7 +75,7 @@
 		6097A5221D580C4700DAFB98 = {
 			isa = PBXGroup;
 			children = (
-				6097A52D1D580C4700DAFB98 /* BriggsDemo */,
+				6097A52D1D580C4700DAFB98 /* Source */,
 				6097A52C1D580C4700DAFB98 /* Products */,
 				60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */,
 			);
@@ -89,7 +89,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6097A52D1D580C4700DAFB98 /* BriggsDemo */ = {
+		6097A52D1D580C4700DAFB98 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				6097A5591D580C9100DAFB98 /* ViewControllers */,
@@ -98,7 +98,7 @@
 				6097A5371D580C4700DAFB98 /* LaunchScreen.storyboard */,
 				6097A53A1D580C4700DAFB98 /* Info.plist */,
 			);
-			path = BriggsDemo;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		6097A5591D580C9100DAFB98 /* ViewControllers */ = {
@@ -330,7 +330,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = BriggsDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADA.BriggsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,7 +346,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = BriggsDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADA.BriggsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
