@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- AdaptiveAttribute correlating to `UITraitCollection.init(userInterfaceIdiom idiom: UIUserInterfaceIdiom)`
+ `AdaptiveAttribute` correlating to `UITraitCollection.init(userInterfaceIdiom idiom: UIUserInterfaceIdiom)`
  */
 public enum Idiom: AdaptiveAttribute {
 

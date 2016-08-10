@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- 
+ A view controller to select either a Native-implemented demo or a Briggs-implemented demo.
  */
 class SelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 

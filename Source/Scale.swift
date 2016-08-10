@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- AdaptiveAttribute correlating to `UITraitCollection.init(displayScale scale: CGFloat)`
+ `AdaptiveAttribute` correlating to `UITraitCollection.init(displayScale scale: CGFloat)`
  */
 public enum Scale: AdaptiveAttribute {
 

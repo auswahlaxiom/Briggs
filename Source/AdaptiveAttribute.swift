@@ -6,10 +6,12 @@
 import UIKit
 
 /**
- An AdaptiveAttribute of an interface that is determined by its UITraitCollection. 
- This protocol provides convenience for describing complex UITraitCollections.
+ An `AdaptiveAttribute` represents a trait in a `UITraitCollection`.
  */
 public protocol AdaptiveAttribute {
 
+    /**
+     Creates a `UITraitCollection` corresponding to the trait `self` represents
+     */
     func generateTraitCollection() -> UITraitCollection
 }

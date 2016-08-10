@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- AdaptiveAttribute correlating to `UITraitCollection.init(horizontalSizeClass: UIUserInterfaceSizeClass)` and `UITraitCollection.init(verticalSizeClass: UIUserInterfaceSizeClass)`
+ `AdaptiveAttribute` correlating to `UITraitCollection.init(horizontalSizeClass: UIUserInterfaceSizeClass)` and `UITraitCollection.init(verticalSizeClass: UIUserInterfaceSizeClass)`
  */
 public enum SizeClass: AdaptiveAttribute {
 

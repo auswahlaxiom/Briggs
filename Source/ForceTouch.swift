@@ -6,7 +6,7 @@
 import UIKit
 
 /**
- AdaptiveAttribute correlating to `UITraitCollection.init(forceTouchCapability capability: UIForceTouchCapability)`
+ `AdaptiveAttribute` correlating to `UITraitCollection.init(forceTouchCapability capability: UIForceTouchCapability)`
  */
 public enum ForceTouch: AdaptiveAttribute {
     
