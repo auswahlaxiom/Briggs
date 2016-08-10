@@ -6,6 +6,23 @@ As seen on POSSIBLE Mobile Insights!
 - [How UITraitCollection Changed Everything](https://possiblemobile.com/2016/07/adaptive-interfaces-uitraitcollection/)
 - [Reimagining UITraitCollection with Briggs](https://possiblemobile.com/2016/08/reimagining-uitraitcollection-with-briggs/)
 
+What if setting arbitrary constraints, views, and behaviors for specific trait collections was as easy as:
+```swift
+let exclusiveButton = UIButton(type: .System)
+let traits: [AdaptiveAttribute] = [
+    Idiom.Phone,
+    Scale.TwoX,
+    ForceTouch.Available,
+    SizeClass.VerticalRegular,
+    SizeClass.HorizontalCompact,
+]
+
+addViewFor(traits, view: exclusiveButton, to: view, withConstraints: [
+    exclusiveButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+    exclusiveButton.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
+])
+```
+
 ## Abstract
 
 *UITraitEnvironment is just too cool to be limited to views and view controllers!*
@@ -123,7 +140,7 @@ For an in-depth dive into Briggs, please visit [Reimagining UITraitCollection wi
 
 ## Credits
 
-Briggs was created by [Ada Turner](https://www.linkedin.com/in/ada-turner-4a663848), an iOS developer at [POSSIBLE Mobile](https://possiblemobile.com/author/ada-turner/)
+Briggs was created by [Ada Turner](https://www.linkedin.com/in/ada-turner-4a663848), an iOS developer at [POSSIBLE Mobile](https://possiblemobile.com/author/ada-turner/).
 
 ## License
 
