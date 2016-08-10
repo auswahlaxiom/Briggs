@@ -56,7 +56,7 @@ extension AdaptiveInterface {
     /**
      Convenience for adding behavior for a single AdaptiveAttribute
      */
-    func addConstraintsFor(attribute: AdaptiveAttribute, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    func addBehaviorFor(attribute: AdaptiveAttribute, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
