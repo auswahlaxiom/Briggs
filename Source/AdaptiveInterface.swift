@@ -10,6 +10,14 @@ import UIKit
 
  `AdaptiveInterface` represents the supplying parent in an inheritence hierarchy of parent-child relationships passing trait  information.
 
+ Reccomended override for `UITraitEnvironment`s:
+ ```
+ override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+     super.traitCollectionDidChange(previousTraitCollection)
+     updateForTraitCollection(traitCollection)
+ }
+ ```
+
  Extension methods provide conveniences for adding `Behavior`s, `NSLayoutConstraint`s, and `UIView`s with associated `UITraitCollection`s. These are stored in `AdaptiveElement`-conforming containers which append to `self.adaptiveElements`.
 
  `AdaptiveInterface` is a class-only protocol to allow for mutating extension methods.
@@ -150,7 +158,7 @@ public extension AdaptiveInterface {
         // Add view to parent, so constraints can be created if they are supplied. Will be removed in updateForTraitCollection if necessary.
         parent.addSubview(view)
 
-        let viewContainer = AdaptiveViewContainer(parent: parent, child: view, traitCollection: traitCollection)
+        let viewContainer = AdaptiveViewContainer(traitCollection: traitCollection, parent: parent, child: view)
         adaptiveElements.append(viewContainer)
 
         // `constraints` is an autoclosure because constraints relating `view` to `parent` or its superviews cannot be instantiated until `view` is in `parent`'s heirarchy
