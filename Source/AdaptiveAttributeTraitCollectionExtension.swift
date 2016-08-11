@@ -11,7 +11,7 @@ import UIKit
 public extension UITraitCollection {
 
     /**
-     Create a `UITraitCollection` from one ore more `AdaptiveAttribute`s.
+     Create a `UITraitCollection` from one or more `AdaptiveAttribute`s.
 
      - parameter attributes: Array of `AdaptiveAttribute` from which a new `UITraitCollection` will be created
      - returns: A new `UITraitCollection` containing the traits of each `AdaptiveAttribute`
