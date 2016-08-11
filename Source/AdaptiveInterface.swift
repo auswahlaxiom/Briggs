@@ -10,7 +10,7 @@ import UIKit
 
  `AdaptiveInterface` represents the supplying parent in an inheritence hierarchy of parent-child relationships passing trait  information.
 
- Reccomended override for `UITraitEnvironment`s:
+ Recommended override for `UITraitEnvironment`s:
  ```
  override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
      super.traitCollectionDidChange(previousTraitCollection)
