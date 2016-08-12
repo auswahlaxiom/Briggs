@@ -11,6 +11,7 @@ As seen on POSSIBLE Mobile Insights!
 
 - [How UITraitCollection Changed Everything](https://possiblemobile.com/2016/07/adaptive-interfaces-uitraitcollection/)
 - [Reimagining UITraitCollection with Briggs](https://possiblemobile.com/2016/08/reimagining-uitraitcollection-with-briggs/)
+- [iOS Frameworks Part 2: Build & Ship](https://possiblemobile.com/2016/08/ios-frameworks-part-2-build-and-ship)
 
 What if setting arbitrary constraints, views, and behaviors for specific trait collections was as easy as:
 ```swift
