@@ -10,21 +10,43 @@
 		6097A52F1D580C4700DAFB98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A52E1D580C4700DAFB98 /* AppDelegate.swift */; };
 		6097A5361D580C4700DAFB98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6097A5351D580C4700DAFB98 /* Assets.xcassets */; };
 		6097A5391D580C4700DAFB98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6097A5371D580C4700DAFB98 /* LaunchScreen.storyboard */; };
-		6097A5461D580C7900DAFB98 /* AdaptiveAttributeTraitCollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5411D580C7900DAFB98 /* AdaptiveAttributeTraitCollectionExtension.swift */; };
-		6097A5471D580C7900DAFB98 /* ForceTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5421D580C7900DAFB98 /* ForceTouch.swift */; };
-		6097A5481D580C7900DAFB98 /* Idiom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5431D580C7900DAFB98 /* Idiom.swift */; };
-		6097A5491D580C7900DAFB98 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5441D580C7900DAFB98 /* Scale.swift */; };
-		6097A54A1D580C7900DAFB98 /* SizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5451D580C7900DAFB98 /* SizeClass.swift */; };
-		6097A54F1D580C8200DAFB98 /* AdaptiveBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A54C1D580C8200DAFB98 /* AdaptiveBehavior.swift */; };
-		6097A5501D580C8200DAFB98 /* AdaptiveConstraintContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A54D1D580C8200DAFB98 /* AdaptiveConstraintContainer.swift */; };
-		6097A5511D580C8200DAFB98 /* AdaptiveViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A54E1D580C8200DAFB98 /* AdaptiveViewContainer.swift */; };
-		6097A5561D580C8900DAFB98 /* AdaptiveAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5531D580C8900DAFB98 /* AdaptiveAttribute.swift */; };
-		6097A5571D580C8900DAFB98 /* AdaptiveElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5541D580C8900DAFB98 /* AdaptiveElement.swift */; };
-		6097A5581D580C8900DAFB98 /* AdaptiveInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A5551D580C8900DAFB98 /* AdaptiveInterface.swift */; };
 		6097A55D1D580C9100DAFB98 /* BriggsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A55A1D580C9100DAFB98 /* BriggsViewController.swift */; };
 		6097A55E1D580C9100DAFB98 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A55B1D580C9100DAFB98 /* NativeViewController.swift */; };
 		6097A55F1D580C9100DAFB98 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6097A55C1D580C9100DAFB98 /* SelectionViewController.swift */; };
+		60E2D4E21D5A834A00B4ADE2 /* Briggs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E2D4D91D5A821200B4ADE2 /* Briggs.framework */; };
+		60E2D4E31D5A834A00B4ADE2 /* Briggs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60E2D4D91D5A821200B4ADE2 /* Briggs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60E2D4D81D5A821200B4ADE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60E2D4A11D5A76A100B4ADE2;
+			remoteInfo = Briggs;
+		};
+		60E2D4E41D5A834A00B4ADE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 60E2D4A01D5A76A100B4ADE2;
+			remoteInfo = Briggs;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60E2D4E61D5A834A00B4ADE2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60E2D4E31D5A834A00B4ADE2 /* Briggs.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6097A52B1D580C4700DAFB98 /* BriggsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BriggsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,20 +54,10 @@
 		6097A5351D580C4700DAFB98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6097A5381D580C4700DAFB98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6097A53A1D580C4700DAFB98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6097A5411D580C7900DAFB98 /* AdaptiveAttributeTraitCollectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveAttributeTraitCollectionExtension.swift; sourceTree = "<group>"; };
-		6097A5421D580C7900DAFB98 /* ForceTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouch.swift; sourceTree = "<group>"; };
-		6097A5431D580C7900DAFB98 /* Idiom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Idiom.swift; sourceTree = "<group>"; };
-		6097A5441D580C7900DAFB98 /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
-		6097A5451D580C7900DAFB98 /* SizeClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClass.swift; sourceTree = "<group>"; };
-		6097A54C1D580C8200DAFB98 /* AdaptiveBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveBehavior.swift; sourceTree = "<group>"; };
-		6097A54D1D580C8200DAFB98 /* AdaptiveConstraintContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveConstraintContainer.swift; sourceTree = "<group>"; };
-		6097A54E1D580C8200DAFB98 /* AdaptiveViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveViewContainer.swift; sourceTree = "<group>"; };
-		6097A5531D580C8900DAFB98 /* AdaptiveAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveAttribute.swift; sourceTree = "<group>"; };
-		6097A5541D580C8900DAFB98 /* AdaptiveElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveElement.swift; sourceTree = "<group>"; };
-		6097A5551D580C8900DAFB98 /* AdaptiveInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveInterface.swift; sourceTree = "<group>"; };
 		6097A55A1D580C9100DAFB98 /* BriggsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BriggsViewController.swift; sourceTree = "<group>"; };
 		6097A55B1D580C9100DAFB98 /* NativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
 		6097A55C1D580C9100DAFB98 /* SelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Briggs.xcodeproj; path = ../Briggs.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E2D4E21D5A834A00B4ADE2 /* Briggs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +77,7 @@
 			children = (
 				6097A52D1D580C4700DAFB98 /* Source */,
 				6097A52C1D580C4700DAFB98 /* Products */,
+				60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +92,6 @@
 		6097A52D1D580C4700DAFB98 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6097A5401D580C7900DAFB98 /* AdaptiveAttributes */,
-				6097A54B1D580C8200DAFB98 /* AdaptiveContainers */,
-				6097A5521D580C8900DAFB98 /* AdaptiveProtocols */,
 				6097A5591D580C9100DAFB98 /* ViewControllers */,
 				6097A52E1D580C4700DAFB98 /* AppDelegate.swift */,
 				6097A5351D580C4700DAFB98 /* Assets.xcassets */,
@@ -88,38 +99,6 @@
 				6097A53A1D580C4700DAFB98 /* Info.plist */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		6097A5401D580C7900DAFB98 /* AdaptiveAttributes */ = {
-			isa = PBXGroup;
-			children = (
-				6097A5411D580C7900DAFB98 /* AdaptiveAttributeTraitCollectionExtension.swift */,
-				6097A5421D580C7900DAFB98 /* ForceTouch.swift */,
-				6097A5431D580C7900DAFB98 /* Idiom.swift */,
-				6097A5441D580C7900DAFB98 /* Scale.swift */,
-				6097A5451D580C7900DAFB98 /* SizeClass.swift */,
-			);
-			path = AdaptiveAttributes;
-			sourceTree = "<group>";
-		};
-		6097A54B1D580C8200DAFB98 /* AdaptiveContainers */ = {
-			isa = PBXGroup;
-			children = (
-				6097A54C1D580C8200DAFB98 /* AdaptiveBehavior.swift */,
-				6097A54D1D580C8200DAFB98 /* AdaptiveConstraintContainer.swift */,
-				6097A54E1D580C8200DAFB98 /* AdaptiveViewContainer.swift */,
-			);
-			path = AdaptiveContainers;
-			sourceTree = "<group>";
-		};
-		6097A5521D580C8900DAFB98 /* AdaptiveProtocols */ = {
-			isa = PBXGroup;
-			children = (
-				6097A5531D580C8900DAFB98 /* AdaptiveAttribute.swift */,
-				6097A5541D580C8900DAFB98 /* AdaptiveElement.swift */,
-				6097A5551D580C8900DAFB98 /* AdaptiveInterface.swift */,
-			);
-			path = AdaptiveProtocols;
 			sourceTree = "<group>";
 		};
 		6097A5591D580C9100DAFB98 /* ViewControllers */ = {
@@ -132,6 +111,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		60E2D4D51D5A821200B4ADE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D4D91D5A821200B4ADE2 /* Briggs.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,10 +129,12 @@
 				6097A5271D580C4700DAFB98 /* Sources */,
 				6097A5281D580C4700DAFB98 /* Frameworks */,
 				6097A5291D580C4700DAFB98 /* Resources */,
+				60E2D4E61D5A834A00B4ADE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				60E2D4E51D5A834A00B4ADE2 /* PBXTargetDependency */,
 			);
 			name = BriggsDemo;
 			productName = BriggsDemo;
@@ -178,12 +167,28 @@
 			mainGroup = 6097A5221D580C4700DAFB98;
 			productRefGroup = 6097A52C1D580C4700DAFB98 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 60E2D4D51D5A821200B4ADE2 /* Products */;
+					ProjectRef = 60E2D4D41D5A821200B4ADE2 /* Briggs.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6097A52A1D580C4700DAFB98 /* BriggsDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		60E2D4D91D5A821200B4ADE2 /* Briggs.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Briggs.framework;
+			remoteRef = 60E2D4D81D5A821200B4ADE2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6097A5291D580C4700DAFB98 /* Resources */ = {
@@ -202,25 +207,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6097A5561D580C8900DAFB98 /* AdaptiveAttribute.swift in Sources */,
 				6097A55E1D580C9100DAFB98 /* NativeViewController.swift in Sources */,
-				6097A5511D580C8200DAFB98 /* AdaptiveViewContainer.swift in Sources */,
-				6097A5481D580C7900DAFB98 /* Idiom.swift in Sources */,
 				6097A55D1D580C9100DAFB98 /* BriggsViewController.swift in Sources */,
-				6097A5571D580C8900DAFB98 /* AdaptiveElement.swift in Sources */,
-				6097A54A1D580C7900DAFB98 /* SizeClass.swift in Sources */,
 				6097A52F1D580C4700DAFB98 /* AppDelegate.swift in Sources */,
-				6097A5471D580C7900DAFB98 /* ForceTouch.swift in Sources */,
-				6097A5491D580C7900DAFB98 /* Scale.swift in Sources */,
 				6097A55F1D580C9100DAFB98 /* SelectionViewController.swift in Sources */,
-				6097A5461D580C7900DAFB98 /* AdaptiveAttributeTraitCollectionExtension.swift in Sources */,
-				6097A5581D580C8900DAFB98 /* AdaptiveInterface.swift in Sources */,
-				6097A5501D580C8200DAFB98 /* AdaptiveConstraintContainer.swift in Sources */,
-				6097A54F1D580C8200DAFB98 /* AdaptiveBehavior.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60E2D4E51D5A834A00B4ADE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Briggs;
+			targetProxy = 60E2D4E41D5A834A00B4ADE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6097A5371D580C4700DAFB98 /* LaunchScreen.storyboard */ = {
@@ -323,6 +325,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADA.BriggsDemo;
@@ -334,6 +341,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ADA.BriggsDemo;
