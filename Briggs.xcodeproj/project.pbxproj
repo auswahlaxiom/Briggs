@@ -22,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6003FBE31DAEC6CA000BB2FD /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6003FBE41DAEC6CA000BB2FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60E2D4A11D5A76A100B4ADE2 /* Briggs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Briggs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E2D4A41D5A76A100B4ADE2 /* Briggs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Briggs.h; sourceTree = "<group>"; };
 		60E2D4A61D5A76A100B4ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		60E2D4971D5A76A100B4ADE2 = {
 			isa = PBXGroup;
 			children = (
+				6003FBE31DAEC6CA000BB2FD /* LICENSE */,
+				6003FBE41DAEC6CA000BB2FD /* README.md */,
 				60E2D4A31D5A76A100B4ADE2 /* Source */,
 				60E2D4A21D5A76A100B4ADE2 /* Products */,
 			);
