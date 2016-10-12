@@ -47,7 +47,7 @@ public extension UITraitCollection {
      - parameter attribute: The `AdaptiveAttribute` we want to find in the `UITraitCollection`
      - returns: Returns `true` if the `UITraitCollection` contains the `AdaptiveAttribute`, else, `false`
      */
-    public func contains(attribute: AdaptiveAttribute) -> Bool {
+    public func contains(_ attribute: AdaptiveAttribute) -> Bool {
         return containsTraits(in: attribute.generateTraitCollection())
     }
 

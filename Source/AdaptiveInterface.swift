@@ -26,15 +26,15 @@
 import UIKit
 
 /**
- An `AdaptiveInterface` contains a collection of `AdaptiveElement`s and forwards `updateForTraitCollection` to each of them.
+ An `AdaptiveInterface` contains a collection of `AdaptiveElement`s and forwards `update(for incomingTraitCollection:)` to each of them.
 
  `AdaptiveInterface` represents the supplying parent in an inheritence hierarchy of parent-child relationships passing trait  information.
 
  Recommended override for `UITraitEnvironment`s:
  ```
- override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+ override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
      super.traitCollectionDidChange(previousTraitCollection)
-     updateForTraitCollection(traitCollection)
+     update(for: traitCollection)
  }
  ```
 
@@ -45,24 +45,24 @@ import UIKit
 public protocol AdaptiveInterface: class, AdaptiveElement {
 
     /**
-     `adaptiveElements` represent `self`'s children. Each element will be forwarded calls to `updateForTraitCollection` that `self` recieves.
+     `adaptiveElements` represent `self`'s children. Each element will be forwarded calls to `update(for incomingTraitCollection:)` that `self` recieves.
      */
     var adaptiveElements: [AdaptiveElement] { get set }
 }
 
 /**
- The default implementation of `updateForTraitCollection` forwards `updateForTraitCollection` to each item in `self.adaptiveElements`.
+ The default implementation of `update(for incomingTraitCollection:)` forwards `update(for incomingTraitCollection:)` to each item in `self.adaptiveElements`.
  */
 public extension AdaptiveInterface {
 
     /**
-     Default `AdaptiveInterface` implementation forwards `updateForTraitCollection` to each of `self`'s children.
+     Default `AdaptiveInterface` implementation forwards `update(for incomingTraitCollection:)` to each of `self`'s children.
 
      - note: Child adaptive elements whose `traitCollection` is *not* contained by `incomingTraitCollection` are updated first to avoid conflicting behaviors being active at the same time.
      */
-    public func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection) {
-        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == false }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
-        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == true }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
+    public func update(for incomingTraitCollection: UITraitCollection) {
+        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == false }.forEach { $0.update(for: incomingTraitCollection) }
+        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == true }.forEach { $0.update(for: incomingTraitCollection) }
     }
 }
 
@@ -83,10 +83,10 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveBehavior` and adding it to `self.adaptiveElements`
 
      - parameter traitCollection: `UITraitCollection` for which `behavior` will be executed
-     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
-     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
+     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
+     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addBehaviorFor(_ traitCollection: UITraitCollection, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehavior(for traitCollection: UITraitCollection, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let adaptiveBehavior = AdaptiveBehavior(traitCollection: traitCollection, behavior: behavior, counterBehavior: counterBehavior)
 
         adaptiveElements.append(adaptiveBehavior)
@@ -98,12 +98,12 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveBehavior` and adding it to `self.adaptiveElements`
 
      - parameter attributes: Array of `AdaptiveAttribute`s used to create a `UITraitCollection` for which `behavior` will be executed
-     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
-     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
+     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
+     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addBehaviorFor(_ attributes: [AdaptiveAttribute], behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehavior(for attributes: [AdaptiveAttribute], behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: attributes)
-        addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
+        addBehavior(for: traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
 
     /**
@@ -112,12 +112,12 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveBehavior` and adding it to `self.adaptiveElements`
 
      - parameter attribute: Single `AdaptiveAttribute` used to create a `UITraitCollection` for which `behavior` will be executed
-     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
-     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
+     - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
+     - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addBehaviorFor(_ attribute: AdaptiveAttribute, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehavior(for attribute: AdaptiveAttribute, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: [attribute])
-        addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
+        addBehavior(for: traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
 
     // MARK: Add NSLayoutConstraints
@@ -128,9 +128,9 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveConstraintContainer` and adding it to `self.adaptiveElements`
 
      - parameter traitCollection: `UITraitCollection` for which `constraints` will be activated
-     - parameter constraints: Array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter constraints: Array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addConstraintsFor(_ traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
+    public func addConstraints(for traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
         let container = AdaptiveConstraintContainer(traitCollection: traitCollection, constraints: constraints)
 
         adaptiveElements.append(container)
@@ -142,11 +142,11 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveConstraintContainer` and adding it to `self.adaptiveElements`
 
      - parameter attributes: Array of `AdaptiveAttribute`s used to create a `UITraitCollection` for which `constraints` will be activated
-     - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addConstraintsFor(_ attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
+    public func addConstraints(for attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: attributes)
-        addConstraintsFor(traitCollection, constraints: constraints)
+        addConstraints(for: traitCollection, constraints: constraints)
     }
 
     /**
@@ -155,11 +155,11 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveConstraintContainer` and adding it to `self.adaptiveElements`
 
      - parameter attribute: Single `AdaptiveAttribute` used to create a `UITraitCollection` for which `constraints` will be activated
-     - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      */
-    public func addConstraintsFor(_ attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
+    public func addConstraints(for attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: [attribute])
-        addConstraintsFor(traitCollection, constraints: constraints)
+        addConstraints(for: traitCollection, constraints: constraints)
     }
 
     // MARK: Add UIViews
@@ -170,11 +170,11 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveViewContainer` and optional `AdaptiveConstraintContainer` and adding them to `self.adaptiveElements`
 
      - parameter traitCollection: `UITraitCollection` for which `view` will be added to `parent` and `constraints` will be activated
-     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(_ traitCollection: UITraitCollection, view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
+    public func addView(for traitCollection: UITraitCollection, view: UIView, parent: UIView, constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         // Add view to parent, so constraints can be created if they are supplied. Will be removed in updateForTraitCollection if necessary.
         parent.addSubview(view)
 
@@ -196,13 +196,13 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveViewContainer` and optional `AdaptiveConstraintContainer` and adding them to `self.adaptiveElements`
 
      - parameter attributes: Array of `AdaptiveAttribute`s used to create a `UITraitCollection` for which `view` will be added to `parent` and `constraints` will be activated
-     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(_ attributes: [AdaptiveAttribute], view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
+    public func addView(for attributes: [AdaptiveAttribute], view: UIView, parent: UIView, constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: attributes)
-        addViewFor(traitCollection, view: view, to: parent, withConstraints: constraints)
+        addView(for: traitCollection, view: view, parent: parent, constraints: constraints)
     }
 
     /**
@@ -211,12 +211,12 @@ public extension AdaptiveInterface {
      Convenience for creating an `AdaptiveViewContainer` and optional `AdaptiveConstraintContainer` and adding them to `self.adaptiveElements`
 
      - parameter attribute: Single `AdaptiveAttribute` used to create a `UITraitCollection` for which `view` will be added to `parent` and `constraints` will be activated
-     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
+     - parameter view: `UIView` to be added to `parent` if `incomingTraitCollection` contains `traitCollection` when `update(for incomingTraitCollection:)` is called
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(_ attribute: AdaptiveAttribute, view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
+    public func addView(for attribute: AdaptiveAttribute, view: UIView, parent: UIView, constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: [attribute])
-        addViewFor(traitCollection, view: view, to: parent, withConstraints: constraints)
+        addView(for: traitCollection, view: view, parent: parent, constraints: constraints)
     }
 }

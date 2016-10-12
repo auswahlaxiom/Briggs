@@ -44,7 +44,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Private
 
-    fileprivate func setupRootViewController() {
+    private func setupRootViewController() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let selectionViewController = SelectionViewController()
         let selectionNavigationController = UINavigationController(rootViewController: selectionViewController)

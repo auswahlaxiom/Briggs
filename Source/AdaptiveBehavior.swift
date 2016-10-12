@@ -37,9 +37,9 @@ public struct AdaptiveBehavior: AdaptiveElement {
 
     /// `UITraitCollection` associated with `behavior`.
     public let traitCollection: UITraitCollection
-    /// `Behavior` executed in `updateForTraitCollection` if `incomingTraitCollection` contains `traitCollection`
+    /// `Behavior` executed in `update(for incomingTraitCollection:)` if `incomingTraitCollection` contains `traitCollection`
     public let behavior: Behavior
-    /// Optional `Behavior` executed in `updateForTraitCollection` if `incomingTraitCollection` does *not* contain `traitCollection`
+    /// Optional `Behavior` executed in `update(for incomingTraitCollection:)` if `incomingTraitCollection` does *not* contain `traitCollection`
     public let counterBehavior: Behavior?
 
     /**
@@ -49,7 +49,7 @@ public struct AdaptiveBehavior: AdaptiveElement {
 
      - parameter incomingTraitCollection: The `UITraitCollection` which determines if we execute `behavior` or `counterBehavior`.
      */
-    public func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection) {
+    public func update(for incomingTraitCollection: UITraitCollection) {
         if incomingTraitCollection.containsTraits(in: traitCollection) {
             behavior()
         } else {

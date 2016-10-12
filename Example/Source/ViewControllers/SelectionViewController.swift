@@ -113,9 +113,9 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - Interface
 
-    fileprivate var tableView: UITableView!
+    private var tableView: UITableView!
 
-    fileprivate func setupViews() {
+    private func setupViews() {
         view.backgroundColor = UIColor.white
 
         tableView = UITableView(frame: CGRect.zero, style: .plain)

@@ -98,16 +98,16 @@ class NativeViewController: UIViewController {
 
     // MARK: - Interface
 
-    fileprivate var welcomeLabel: UILabel!
-    fileprivate var continueButton: UIButton!
-    fileprivate var iPadExclusiveButton: UIButton!
+    private var welcomeLabel: UILabel!
+    private var continueButton: UIButton!
+    private var iPadExclusiveButton: UIButton!
 
-    fileprivate var continueButtonFullWidthConstraint: NSLayoutConstraint!
-    fileprivate var continueButtonFixedWidthConstraint: NSLayoutConstraint!
+    private var continueButtonFullWidthConstraint: NSLayoutConstraint!
+    private var continueButtonFixedWidthConstraint: NSLayoutConstraint!
 
-    fileprivate var iPadExclusiveButtonConstraints: [NSLayoutConstraint]!
+    private var iPadExclusiveButtonConstraints: [NSLayoutConstraint]!
 
-    fileprivate func setupViews() {
+    private func setupViews() {
         view.backgroundColor = UIColor.white
 
         welcomeLabel = createWelcomeLabel()
@@ -135,7 +135,7 @@ class NativeViewController: UIViewController {
         ]
     }
 
-    fileprivate func createWelcomeLabel() -> UILabel {
+    private func createWelcomeLabel() -> UILabel {
         let welcomeLabel = UILabel()
         welcomeLabel.text = "Hello World"
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -143,7 +143,7 @@ class NativeViewController: UIViewController {
         return welcomeLabel
     }
 
-    fileprivate func createContinueButton() -> UIButton {
+    private func createContinueButton() -> UIButton {
         let continueButton = UIButton(type: .system)
         continueButton.setTitle("Continue", for: UIControlState())
         continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
@@ -156,7 +156,7 @@ class NativeViewController: UIViewController {
         return continueButton
     }
 
-    fileprivate func createiPadExclusiveButton() -> UIButton {
+    private func createiPadExclusiveButton() -> UIButton {
         let iPadExclusiveButton = UIButton(type: .system)
         iPadExclusiveButton.setTitle("iPad Only!", for: UIControlState())
         iPadExclusiveButton.addTarget(self, action: #selector(iPadExclusiveAction), for: .touchUpInside)

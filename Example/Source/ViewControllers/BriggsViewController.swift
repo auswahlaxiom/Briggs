@@ -55,7 +55,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        updateForTraitCollection(traitCollection)
+        update(for: traitCollection)
     }
 
     // MARK: - AdaptiveInterface
@@ -64,7 +64,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
 
     // MARK: - Interface
 
-    fileprivate func setupViews() {
+    private func setupViews() {
         view.backgroundColor = UIColor.white
 
         let welcomeLabel = createWelcomeLabel()
@@ -74,7 +74,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
         welcomeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
         // Requirement 1: red text for @2x with force touch, otherwise blue text
-        addBehaviorFor([Scale.twoX, ForceTouch.available], behavior: {
+        addBehavior(for: [Scale.twoX, ForceTouch.available], behavior: {
             welcomeLabel.textColor = UIColor.red
         }, counterBehavior: {
             welcomeLabel.textColor = UIColor.blue
@@ -88,24 +88,24 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
         continueButton.heightAnchor.constraint(equalToConstant: 45.0).isActive = true
 
         // Requirement 2: full width in horizontal compact, fixed width in horizontal regular
-        addConstraintsFor(SizeClass.horizontalCompact, constraints:
+        addConstraints(for: SizeClass.horizontalCompact, constraints:
             continueButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: K.margin)
         )
 
-        addConstraintsFor(SizeClass.horizontalRegular, constraints:
+        addConstraints(for: SizeClass.horizontalRegular, constraints:
             continueButton.widthAnchor.constraint(equalToConstant: 180.0)
         )
 
         let iPadExclusiveButton = createiPadExclusiveButton()
 
         // Requirement 3: iPad exclusive button
-        addViewFor(Idiom.pad, view: iPadExclusiveButton, to: view, withConstraints: [
+        addView(for: Idiom.pad, view: iPadExclusiveButton, parent: view, constraints: [
             iPadExclusiveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             iPadExclusiveButton.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: K.margin)
         ])
     }
 
-    fileprivate func createWelcomeLabel() -> UILabel {
+    private func createWelcomeLabel() -> UILabel {
         let welcomeLabel = UILabel()
         welcomeLabel.text = "Hello World"
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -113,7 +113,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
         return welcomeLabel
     }
 
-    fileprivate func createContinueButton() -> UIButton {
+    private func createContinueButton() -> UIButton {
         let continueButton = UIButton(type: .system)
         continueButton.setTitle("Continue", for: UIControlState())
         continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
@@ -126,7 +126,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
         return continueButton
     }
 
-    fileprivate func createiPadExclusiveButton() -> UIButton {
+    private func createiPadExclusiveButton() -> UIButton {
         let iPadExclusiveButton = UIButton(type: .system)
         iPadExclusiveButton.setTitle("iPad Only!", for: UIControlState())
         iPadExclusiveButton.addTarget(self, action: #selector(iPadExclusiveAction), for: .touchUpInside)
