@@ -1,7 +1,7 @@
 # Briggs
 *A reimagination of UITraitCollection*
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Briggs.svg)](https://cocoapods.org/?q=name%3Abriggs)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Briggs.svg)](https://cocoapods.org/pods/Briggs)
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
 [![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
