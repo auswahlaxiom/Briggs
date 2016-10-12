@@ -34,16 +34,16 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     enum Option {
 
-        case takeOne
-        case takeTwo
+        case native
+        case briggs
 
         var title: String {
             let title: String
 
             switch self {
-            case .takeOne:
+            case .native:
                 title = "Native API"
-            case .takeTwo:
+            case .briggs:
                 title = "Briggs API"
             }
 
@@ -54,9 +54,9 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
             let viewController: UIViewController
 
             switch self {
-            case .takeOne:
+            case .native:
                 viewController = NativeViewController()
-            case .takeTwo:
+            case .briggs:
                 viewController = BriggsViewController()
             }
 
@@ -85,7 +85,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - SelectionViewController
 
-    let selections: [Option] = [.takeOne, .takeTwo]
+    let selections: [Option] = [.native, .briggs]
 
     // MARK: - UITableViewDataSource
 
