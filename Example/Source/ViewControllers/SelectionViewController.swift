@@ -34,16 +34,16 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     enum Option {
 
-        case TakeOne
-        case TakeTwo
+        case takeOne
+        case takeTwo
 
         var title: String {
             let title: String
 
             switch self {
-            case .TakeOne:
+            case .takeOne:
                 title = "Native API"
-            case .TakeTwo:
+            case .takeTwo:
                 title = "Briggs API"
             }
 
@@ -54,9 +54,9 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
             let viewController: UIViewController
 
             switch self {
-            case .TakeOne:
+            case .takeOne:
                 viewController = NativeViewController()
-            case .TakeTwo:
+            case .takeTwo:
                 viewController = BriggsViewController()
             }
 
@@ -85,18 +85,18 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - SelectionViewController
 
-    let selections: [Option] = [.TakeOne, .TakeTwo]
+    let selections: [Option] = [.takeOne, .takeTwo]
 
     // MARK: - UITableViewDataSource
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = selections.count
         return count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(K.reuseIdentifier, forIndexPath: indexPath)
-        let selection = selections[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reuseIdentifier, for: indexPath)
+        let selection = selections[(indexPath as NSIndexPath).row]
         cell.textLabel?.text = selection.title
 
         return cell
@@ -104,30 +104,30 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     // MARK: - UITableViewDelegate
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selection = selections[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selection = selections[(indexPath as NSIndexPath).row]
         let viewController = selection.createViewController()
         navigationController?.pushViewController(viewController, animated: true)
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // MARK: - Interface
 
-    private var tableView: UITableView!
+    fileprivate var tableView: UITableView!
 
-    private func setupViews() {
-        view.backgroundColor = UIColor.whiteColor()
+    fileprivate func setupViews() {
+        view.backgroundColor = UIColor.white
 
-        tableView = UITableView(frame: CGRect.zero, style: .Plain)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: K.reuseIdentifier)
+        tableView = UITableView(frame: CGRect.zero, style: .plain)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
 
-        tableView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor).active = true
-        tableView.topAnchor.constraintEqualToAnchor(view.topAnchor).active = true
-        view.trailingAnchor.constraintEqualToAnchor(tableView.trailingAnchor).active = true
-        view.bottomAnchor.constraintEqualToAnchor(tableView.bottomAnchor).active = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
     }
 }

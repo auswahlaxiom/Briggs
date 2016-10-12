@@ -38,7 +38,7 @@ public extension UITraitCollection {
      */
     public static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
         let traitCollections = attributes.map { $0.generateTraitCollection() }
-        return self.init(traitsFromCollections: traitCollections)
+        return self.init(traitsFrom: traitCollections)
     }
 
     /**
@@ -47,8 +47,8 @@ public extension UITraitCollection {
      - parameter attribute: The `AdaptiveAttribute` we want to find in the `UITraitCollection`
      - returns: Returns `true` if the `UITraitCollection` contains the `AdaptiveAttribute`, else, `false`
      */
-    public func contains(attribute attribute: AdaptiveAttribute) -> Bool {
-        return containsTraitsInCollection(attribute.generateTraitCollection())
+    public func contains(attribute: AdaptiveAttribute) -> Bool {
+        return containsTraits(in: attribute.generateTraitCollection())
     }
 
     /**
@@ -58,37 +58,37 @@ public extension UITraitCollection {
         var attributes: [AdaptiveAttribute] = []
 
         switch userInterfaceIdiom {
-        case .Pad: attributes.append(Idiom.Pad)
-        case .Phone: attributes.append(Idiom.Phone)
-        case .TV: attributes.append(Idiom.TV)
-        case .CarPlay: attributes.append(Idiom.CarPlay)
-        case .Unspecified: break
+        case .pad: attributes.append(Idiom.pad)
+        case .phone: attributes.append(Idiom.phone)
+        case .tv: attributes.append(Idiom.tv)
+        case .carPlay: attributes.append(Idiom.carPlay)
+        case .unspecified: break
         }
 
         switch displayScale {
-        case 1.0: attributes.append(Scale.OneX)
-        case 2.0: attributes.append(Scale.TwoX)
-        case 3.0: attributes.append(Scale.ThreeX)
-        case 4.0: attributes.append(Scale.FourX)
+        case 1.0: attributes.append(Scale.oneX)
+        case 2.0: attributes.append(Scale.twoX)
+        case 3.0: attributes.append(Scale.threeX)
+        case 4.0: attributes.append(Scale.fourX)
         default: break
         }
 
         switch horizontalSizeClass {
-        case .Compact: attributes.append(SizeClass.HorizontalCompact)
-        case .Regular: attributes.append(SizeClass.HorizontalRegular)
-        case .Unspecified: break
+        case .compact: attributes.append(SizeClass.horizontalCompact)
+        case .regular: attributes.append(SizeClass.horizontalRegular)
+        case .unspecified: break
         }
 
         switch verticalSizeClass {
-        case .Compact: attributes.append(SizeClass.VerticalCompact)
-        case .Regular: attributes.append(SizeClass.VerticalRegular)
-        case .Unspecified: break
+        case .compact: attributes.append(SizeClass.verticalCompact)
+        case .regular: attributes.append(SizeClass.verticalRegular)
+        case .unspecified: break
         }
 
         switch forceTouchCapability {
-        case .Available: attributes.append(ForceTouch.Available)
-        case .Unavailable: attributes.append(ForceTouch.Unavailable)
-        case .Unknown: break
+        case .available: attributes.append(ForceTouch.available)
+        case .unavailable: attributes.append(ForceTouch.unavailable)
+        case .unknown: break
         }
         
         return attributes

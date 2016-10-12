@@ -60,9 +60,9 @@ public extension AdaptiveInterface {
 
      - note: Child adaptive elements whose `traitCollection` is *not* contained by `incomingTraitCollection` are updated first to avoid conflicting behaviors being active at the same time.
      */
-    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
-        adaptiveElements.filter { incomingTraitCollection.containsTraitsInCollection($0.traitCollection) == false }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
-        adaptiveElements.filter { incomingTraitCollection.containsTraitsInCollection($0.traitCollection) == true }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
+    public func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection) {
+        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == false }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
+        adaptiveElements.filter { incomingTraitCollection.containsTraits(in: $0.traitCollection) == true }.forEach { $0.updateForTraitCollection(incomingTraitCollection) }
     }
 }
 
@@ -86,7 +86,7 @@ public extension AdaptiveInterface {
      - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addBehaviorFor(traitCollection: UITraitCollection, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehaviorFor(_ traitCollection: UITraitCollection, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let adaptiveBehavior = AdaptiveBehavior(traitCollection: traitCollection, behavior: behavior, counterBehavior: counterBehavior)
 
         adaptiveElements.append(adaptiveBehavior)
@@ -101,7 +101,7 @@ public extension AdaptiveInterface {
      - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addBehaviorFor(attributes: [AdaptiveAttribute], behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehaviorFor(_ attributes: [AdaptiveAttribute], behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
@@ -115,7 +115,7 @@ public extension AdaptiveInterface {
      - parameter behavior: `Behavior` to be executed if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      - parameter counterBehavior: Optional `Behavior` (defaults to `nil`) to be executed if `incomingTraitCollection` does not contain `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addBehaviorFor(attribute: AdaptiveAttribute, behavior: AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
+    public func addBehaviorFor(_ attribute: AdaptiveAttribute, behavior: @escaping AdaptiveBehavior.Behavior, counterBehavior: AdaptiveBehavior.Behavior? = nil) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addBehaviorFor(traitCollection, behavior: behavior, counterBehavior: counterBehavior)
     }
@@ -130,7 +130,7 @@ public extension AdaptiveInterface {
      - parameter traitCollection: `UITraitCollection` for which `constraints` will be activated
      - parameter constraints: Array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addConstraintsFor(traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
+    public func addConstraintsFor(_ traitCollection: UITraitCollection, constraints: [NSLayoutConstraint]) {
         let container = AdaptiveConstraintContainer(traitCollection: traitCollection, constraints: constraints)
 
         adaptiveElements.append(container)
@@ -144,7 +144,7 @@ public extension AdaptiveInterface {
      - parameter attributes: Array of `AdaptiveAttribute`s used to create a `UITraitCollection` for which `constraints` will be activated
      - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addConstraintsFor(attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
+    public func addConstraintsFor(_ attributes: [AdaptiveAttribute], constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addConstraintsFor(traitCollection, constraints: constraints)
     }
@@ -157,7 +157,7 @@ public extension AdaptiveInterface {
      - parameter attribute: Single `AdaptiveAttribute` used to create a `UITraitCollection` for which `constraints` will be activated
      - parameter constraints: Variadic array of `NSLayoutConstraint`s to be activated if `incomingTraitCollection` contains `traitCollection` when `updateForTraitCollection` is called
      */
-    public func addConstraintsFor(attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
+    public func addConstraintsFor(_ attribute: AdaptiveAttribute, constraints: NSLayoutConstraint...) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addConstraintsFor(traitCollection, constraints: constraints)
     }
@@ -174,7 +174,7 @@ public extension AdaptiveInterface {
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(traitCollection: UITraitCollection, view: UIView, to parent: UIView, @autoclosure withConstraints constraints: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(_ traitCollection: UITraitCollection, view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         // Add view to parent, so constraints can be created if they are supplied. Will be removed in updateForTraitCollection if necessary.
         parent.addSubview(view)
 
@@ -200,7 +200,7 @@ public extension AdaptiveInterface {
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(attributes: [AdaptiveAttribute], view: UIView, to parent: UIView, @autoclosure withConstraints constraints: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(_ attributes: [AdaptiveAttribute], view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: attributes)
         addViewFor(traitCollection, view: view, to: parent, withConstraints: constraints)
     }
@@ -215,7 +215,7 @@ public extension AdaptiveInterface {
      - parameter parent: `UIView` to which `view` will be added
      - parameter constraints: Optional array of `NSLayoutConstraint`s (defaults to `[]`) used to create an `AdaptiveViewContainer` which will be added alongside the `AdaptiveViewContainer`. Use to specify constraints relating to `view` that will be activated under the same conditions that `view` is added to `parent`.
      */
-    public func addViewFor(attribute: AdaptiveAttribute, view: UIView, to parent: UIView, @autoclosure withConstraints constraints: () -> [NSLayoutConstraint] = []) {
+    public func addViewFor(_ attribute: AdaptiveAttribute, view: UIView, to parent: UIView, withConstraints constraints: @autoclosure () -> [NSLayoutConstraint] = []) {
         let traitCollection = UITraitCollection.create(with: [attribute])
         addViewFor(traitCollection, view: view, to: parent, withConstraints: constraints)
     }

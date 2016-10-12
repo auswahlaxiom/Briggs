@@ -49,8 +49,8 @@ public struct AdaptiveBehavior: AdaptiveElement {
 
      - parameter incomingTraitCollection: The `UITraitCollection` which determines if we execute `behavior` or `counterBehavior`.
      */
-    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
-        if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
+    public func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection) {
+        if incomingTraitCollection.containsTraits(in: traitCollection) {
             behavior()
         } else {
             counterBehavior?()

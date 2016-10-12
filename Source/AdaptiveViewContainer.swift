@@ -46,8 +46,8 @@ public struct AdaptiveViewContainer: AdaptiveElement {
 
      - parameter incomingTraitCollection: The `UITraitCollection` which determines if we add or remove `child`.
      */
-    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
-        if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
+    public func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection) {
+        if incomingTraitCollection.containsTraits(in: traitCollection) {
             if child.superview != parent {
                 parent.addSubview(child)
             }

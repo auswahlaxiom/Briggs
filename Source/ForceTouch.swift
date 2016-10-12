@@ -31,9 +31,9 @@ import UIKit
 public enum ForceTouch: AdaptiveAttribute {
 
     /// Correlates to `UITraitCollection(forceTouchCapability: .Unavailable)
-    case Unavailable
+    case unavailable
     /// Corelates to `UITraitCollection(forceTouchCapability: .Available)
-    case Available
+    case available
 
     /**
      Creates `UITraitCollection` with correlating `UIForceTouchCapability`
@@ -42,8 +42,8 @@ public enum ForceTouch: AdaptiveAttribute {
      */
     public func generateTraitCollection() -> UITraitCollection {
         switch self {
-        case .Unavailable: return UITraitCollection(forceTouchCapability: .Unavailable)
-        case .Available: return UITraitCollection(forceTouchCapability: .Available)
+        case .unavailable: return UITraitCollection(forceTouchCapability: .unavailable)
+        case .available: return UITraitCollection(forceTouchCapability: .available)
         }
     }
 }

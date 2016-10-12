@@ -46,5 +46,5 @@ public protocol AdaptiveElement {
 
      - parameter incomingTraitCollection: An external `UITraitCollection`.
      */
-    func updateForTraitCollection(incomingTraitCollection: UITraitCollection)
+    func updateForTraitCollection(_ incomingTraitCollection: UITraitCollection)
 }

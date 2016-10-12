@@ -31,13 +31,13 @@ import UIKit
 public enum Idiom: AdaptiveAttribute {
 
     /// Corelates to `UITraitCollection(userInterfaceIdiom: .Phone)`
-    case Phone
+    case phone
     /// Corelates to `UITraitCollection(userInterfaceIdiom: .Pad)`
-    case Pad
+    case pad
     /// Corelates to `UITraitCollection(userInterfaceIdiom: .TV)`
-    case TV
+    case tv
     /// Corelates to `UITraitCollection(userInterfaceIdiom: .CarPlay)`
-    case CarPlay
+    case carPlay
 
     /**
      Creates `UITraitCollection` with correlating `UIUserInterfaceIdiom`
@@ -46,10 +46,10 @@ public enum Idiom: AdaptiveAttribute {
      */
     public func generateTraitCollection() -> UITraitCollection {
         switch self {
-        case .Phone: return UITraitCollection(userInterfaceIdiom: .Phone)
-        case .Pad: return UITraitCollection(userInterfaceIdiom: .Pad)
-        case .TV: return UITraitCollection(userInterfaceIdiom: .TV)
-        case .CarPlay: return UITraitCollection(userInterfaceIdiom: .CarPlay)
+        case .phone: return UITraitCollection(userInterfaceIdiom: .phone)
+        case .pad: return UITraitCollection(userInterfaceIdiom: .pad)
+        case .tv: return UITraitCollection(userInterfaceIdiom: .tv)
+        case .carPlay: return UITraitCollection(userInterfaceIdiom: .carPlay)
         }
     }
 }
