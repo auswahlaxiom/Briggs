@@ -5,6 +5,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
 [![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://developer.apple.com/swift/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/auswahlaxiom/Briggs/blob/master/LICENSE)
 
 As seen on POSSIBLE Mobile Insights!
