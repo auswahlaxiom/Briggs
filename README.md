@@ -152,4 +152,4 @@ Briggs was created by [Ada Turner](https://www.linkedin.com/in/ada-turner-4a6638
 
 ## License
 
-Briggs is released under the MIT license. See LICENSE for details.
+Briggs is released under the MIT license. See [LICENSE](https://github.com/auswahlaxiom/Briggs/blob/master/LICENSE) for details.
