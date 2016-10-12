@@ -115,7 +115,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
 
     private func createContinueButton() -> UIButton {
         let continueButton = UIButton(type: .system)
-        continueButton.setTitle("Continue", for: UIControlState())
+        continueButton.setTitle("Continue", for: .normal)
         continueButton.addTarget(self, action: #selector(continueAction), for: .touchUpInside)
         continueButton.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 1.0, alpha: 1.0)
         continueButton.layer.borderColor = UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 1.0).cgColor
@@ -128,7 +128,7 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
 
     private func createiPadExclusiveButton() -> UIButton {
         let iPadExclusiveButton = UIButton(type: .system)
-        iPadExclusiveButton.setTitle("iPad Only!", for: UIControlState())
+        iPadExclusiveButton.setTitle("iPad Only!", for: .normal)
         iPadExclusiveButton.addTarget(self, action: #selector(iPadExclusiveAction), for: .touchUpInside)
         iPadExclusiveButton.translatesAutoresizingMaskIntoConstraints = false
 

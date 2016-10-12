@@ -96,7 +96,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reuseIdentifier, for: indexPath)
-        let selection = selections[(indexPath as NSIndexPath).row]
+        let selection = selections[indexPath.row]
         cell.textLabel?.text = selection.title
 
         return cell
@@ -105,7 +105,7 @@ class SelectionViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: - UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selection = selections[(indexPath as NSIndexPath).row]
+        let selection = selections[indexPath.row]
         let viewController = selection.createViewController()
         navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
