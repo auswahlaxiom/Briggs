@@ -34,7 +34,7 @@ public struct AdaptiveConstraintContainer: AdaptiveElement {
 
     /// `UITraitCollection` associated with `constraints`.
     public let traitCollection: UITraitCollection
-    /// Array of `NSLayoutConstraint` activated or deactivated in `updateForTraitCollection` if `incomingTraitCollection` does or does not contain `traitCollection`, respectively
+    /// Array of `NSLayoutConstraint` activated or deactivated in `update(for incomingTraitCollection:)` if `incomingTraitCollection` does or does not contain `traitCollection`, respectively
     public let constraints: [NSLayoutConstraint]
 
     /**
@@ -44,11 +44,11 @@ public struct AdaptiveConstraintContainer: AdaptiveElement {
 
      - parameter incomingTraitCollection: The `UITraitCollection` which determines if we activate or deactivate `constraints`.
      */
-    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
-        if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
-            NSLayoutConstraint.activateConstraints(constraints)
+    public func update(for incomingTraitCollection: UITraitCollection) {
+        if incomingTraitCollection.containsTraits(in: traitCollection) {
+            NSLayoutConstraint.activate(constraints)
         } else {
-            NSLayoutConstraint.deactivateConstraints(constraints)
+            NSLayoutConstraint.deactivate(constraints)
         }
     }
 }

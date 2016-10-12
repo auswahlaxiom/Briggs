@@ -34,9 +34,9 @@ public struct AdaptiveViewContainer: AdaptiveElement {
 
     /// `UITraitCollection` associated with `child`.
     public let traitCollection: UITraitCollection
-    /// `UIView` that will add `child` as a subview in `updateForTraitCollection` if `incomingTraitCollection` contains `traitCollection`
+    /// `UIView` that will add `child` as a subview in `update(for incomingTraitCollection:)` if `incomingTraitCollection` contains `traitCollection`
     public unowned let parent: UIView
-    /// `UIView` that will be added to `parent` as a subview or removed from its `superview` in `updateForTraitCollection` if `incomingTraitCollection` does or does not contain `traitCollection`, respectively
+    /// `UIView` that will be added to `parent` as a subview or removed from its `superview` in `update(for incomingTraitCollection:)` if `incomingTraitCollection` does or does not contain `traitCollection`, respectively
     public let child: UIView
 
     /**
@@ -46,8 +46,8 @@ public struct AdaptiveViewContainer: AdaptiveElement {
 
      - parameter incomingTraitCollection: The `UITraitCollection` which determines if we add or remove `child`.
      */
-    public func updateForTraitCollection(incomingTraitCollection: UITraitCollection) {
-        if incomingTraitCollection.containsTraitsInCollection(traitCollection) {
+    public func update(for incomingTraitCollection: UITraitCollection) {
+        if incomingTraitCollection.containsTraits(in: traitCollection) {
             if child.superview != parent {
                 parent.addSubview(child)
             }

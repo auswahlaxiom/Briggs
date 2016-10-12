@@ -5,6 +5,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
 [![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://developer.apple.com/swift/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/auswahlaxiom/Briggs/blob/master/LICENSE)
 
 As seen on POSSIBLE Mobile Insights!
@@ -79,7 +80,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Briggs', '~> 1.1.1'
+    pod 'Briggs', '~> 2.0.0'
 end
 ```
 
@@ -103,7 +104,7 @@ $ brew install carthage
 To integrate Briggs into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "auswahlaxiom/Briggs" ~> 1.1.1
+github "auswahlaxiom/Briggs" ~> 2.0.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Briggs.framework` into your Xcode project.
@@ -151,4 +152,4 @@ Briggs was created by [Ada Turner](https://www.linkedin.com/in/ada-turner-4a6638
 
 ## License
 
-Briggs is released under the MIT license. See LICENSE for details.
+Briggs is released under the MIT license. See [LICENSE](https://github.com/auswahlaxiom/Briggs/blob/master/LICENSE) for details.

@@ -31,13 +31,13 @@ import UIKit
 public enum SizeClass: AdaptiveAttribute {
 
     /// Corelates to `UITraitCollection(horizontalSizeClass: .Compact)`
-    case HorizontalCompact
+    case horizontalCompact
     /// Corelates to `UITraitCollection(horizontalSizeClass: .Regular)`
-    case HorizontalRegular
+    case horizontalRegular
     /// Corelates to `UITraitCollection(verticalSizeClass: .Compact)`
-    case VerticalCompact
+    case verticalCompact
     /// Corelates to `UITraitCollection(verticalSizeClass: .Regular)`
-    case VerticalRegular
+    case verticalRegular
 
     /**
      Creates `UITraitCollection` with correlating `UIUserInterfaceSizeClass`
@@ -46,10 +46,10 @@ public enum SizeClass: AdaptiveAttribute {
      */
     public func generateTraitCollection() -> UITraitCollection {
         switch self {
-        case .HorizontalCompact: return UITraitCollection(horizontalSizeClass: .Compact)
-        case .HorizontalRegular: return UITraitCollection(horizontalSizeClass: .Regular)
-        case .VerticalCompact: return UITraitCollection(verticalSizeClass: .Compact)
-        case .VerticalRegular: return UITraitCollection(verticalSizeClass: .Regular)
+        case .horizontalCompact: return UITraitCollection(horizontalSizeClass: .compact)
+        case .horizontalRegular: return UITraitCollection(horizontalSizeClass: .regular)
+        case .verticalCompact: return UITraitCollection(verticalSizeClass: .compact)
+        case .verticalRegular: return UITraitCollection(verticalSizeClass: .regular)
         }
     }
 }

@@ -32,7 +32,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupRootViewController()
 
         return true
@@ -45,7 +45,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Private
 
     private func setupRootViewController() {
-        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let window = UIWindow(frame: UIScreen.main.bounds)
         let selectionViewController = SelectionViewController()
         let selectionNavigationController = UINavigationController(rootViewController: selectionViewController)
 

@@ -31,13 +31,13 @@ import UIKit
 public enum Scale: AdaptiveAttribute {
 
     /// Corelates to `UITraitCollection(displayScale: 1.0)`
-    case OneX
+    case oneX
     /// Corelates to `UITraitCollection(displayScale: 2.0)`
-    case TwoX
+    case twoX
     /// Corelates to `UITraitCollection(displayScale: 3.0)`
-    case ThreeX
+    case threeX
     /// Corelates to `UITraitCollection(displayScale: 4.0)`
-    case FourX
+    case fourX
 
     /**
      Creates `UITraitCollection` with correlating `CGFloat` scale
@@ -46,10 +46,10 @@ public enum Scale: AdaptiveAttribute {
      */
     public func generateTraitCollection() -> UITraitCollection {
         switch self {
-        case .OneX: return UITraitCollection(displayScale: 1.0)
-        case .TwoX: return UITraitCollection(displayScale: 2.0)
-        case .ThreeX: return UITraitCollection(displayScale: 3.0)
-        case .FourX: return UITraitCollection(displayScale: 4.0)
+        case .oneX: return UITraitCollection(displayScale: 1.0)
+        case .twoX: return UITraitCollection(displayScale: 2.0)
+        case .threeX: return UITraitCollection(displayScale: 3.0)
+        case .fourX: return UITraitCollection(displayScale: 4.0)
         }
     }
 }
