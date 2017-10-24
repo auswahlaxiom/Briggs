@@ -2,7 +2,7 @@
 //  SizeClass.swift
 //  Briggs
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,13 +30,13 @@ import UIKit
  */
 public enum SizeClass: AdaptiveAttribute {
 
-    /// Corelates to `UITraitCollection(horizontalSizeClass: .Compact)`
+    /// Corelates to `UITraitCollection(horizontalSizeClass: .compact)`
     case horizontalCompact
-    /// Corelates to `UITraitCollection(horizontalSizeClass: .Regular)`
+    /// Corelates to `UITraitCollection(horizontalSizeClass: .regular)`
     case horizontalRegular
-    /// Corelates to `UITraitCollection(verticalSizeClass: .Compact)`
+    /// Corelates to `UITraitCollection(verticalSizeClass: .compact)`
     case verticalCompact
-    /// Corelates to `UITraitCollection(verticalSizeClass: .Regular)`
+    /// Corelates to `UITraitCollection(verticalSizeClass: .regular)`
     case verticalRegular
 
     /**

@@ -2,7 +2,7 @@
 //  Idiom.swift
 //  Briggs
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,13 +30,13 @@ import UIKit
  */
 public enum Idiom: AdaptiveAttribute {
 
-    /// Corelates to `UITraitCollection(userInterfaceIdiom: .Phone)`
+    /// Corelates to `UITraitCollection(userInterfaceIdiom: .phone)`
     case phone
-    /// Corelates to `UITraitCollection(userInterfaceIdiom: .Pad)`
+    /// Corelates to `UITraitCollection(userInterfaceIdiom: .pad)`
     case pad
-    /// Corelates to `UITraitCollection(userInterfaceIdiom: .TV)`
+    /// Corelates to `UITraitCollection(userInterfaceIdiom: .tv)`
     case tv
-    /// Corelates to `UITraitCollection(userInterfaceIdiom: .CarPlay)`
+    /// Corelates to `UITraitCollection(userInterfaceIdiom: .carPlay)`
     case carPlay
 
     /**

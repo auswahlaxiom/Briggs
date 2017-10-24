@@ -2,7 +2,7 @@
 //  BriggsViewController.swift
 //  BriggsDemo
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -137,14 +137,14 @@ class BriggsViewController: UIViewController, AdaptiveInterface {
 
     // MARK: - Actions
 
-    func continueAction(_ sender: UIButton) {
+    @objc func continueAction(_ sender: UIButton) {
         let alert = UIAlertController(title: "Great Success!", message: "You may continue.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Cool", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
 
-    func iPadExclusiveAction(_ sender: UIButton) {
+    @objc func iPadExclusiveAction(_ sender: UIButton) {
         let alert = UIAlertController(title: "iPad Achieved!", message: "You are holding an iPad.", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Nice", style: .default, handler: nil)
         alert.addAction(ok)

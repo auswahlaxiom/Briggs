@@ -5,7 +5,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
 [![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/Briggs.svg)](http://cocoadocs.org/docsets/Briggs)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://developer.apple.com/swift/)
+[![Swift 4.0](https://img.shields.io/badge/Swift-3.0-orange.svg)](https://developer.apple.com/swift/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/auswahlaxiom/Briggs/blob/master/LICENSE)
 
 As seen on POSSIBLE Mobile Insights!
@@ -16,16 +16,16 @@ As seen on POSSIBLE Mobile Insights!
 
 What if setting arbitrary constraints, views, and behaviors for specific trait collections was as easy as:
 ```swift
-let exclusiveButton = UIButton(type: .System)
+let exclusiveButton = UIButton(type: .system)
 let traits: [AdaptiveAttribute] = [
-    Idiom.Phone,
-    Scale.TwoX,
-    ForceTouch.Available,
-    SizeClass.VerticalRegular,
-    SizeClass.HorizontalCompact,
+    Idiom.phone,
+    Scale.twoX,
+    ForceTouch.available,
+    SizeClass.verticalRegular,
+    SizeClass.horizontalCompact,
 ]
 
-addViewFor(traits, view: exclusiveButton, to: view, withConstraints: [
+addView(for: traits, view: exclusiveButton, parent: view, constraints: [
     exclusiveButton.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
     exclusiveButton.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor),
 ])
@@ -59,8 +59,8 @@ Briggs seeks to provide a crucial missing component in Apple’s API: `UITraitEn
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 7.3+
+- iOS 10.0+
+- Xcode 9.0+
 
 ## Installation
 
@@ -76,11 +76,11 @@ To integrate Briggs into your Xcode project using CocoaPods, specify it in your 
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
+platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Briggs', '~> 2.0.0'
+    pod 'Briggs', '~> 3.0.0'
 end
 ```
 
@@ -104,7 +104,7 @@ $ brew install carthage
 To integrate Briggs into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "auswahlaxiom/Briggs" ~> 2.0.0
+github "auswahlaxiom/Briggs" ~> 3.0.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Briggs.framework` into your Xcode project.
