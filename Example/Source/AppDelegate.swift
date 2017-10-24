@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BriggsDemo
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal

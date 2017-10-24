@@ -2,7 +2,7 @@
 //  AdaptiveAttributeTraitCollectionExtension.swift
 //  Briggs
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -89,6 +89,34 @@ public extension UITraitCollection {
         case .available: attributes.append(ForceTouch.available)
         case .unavailable: attributes.append(ForceTouch.unavailable)
         case .unknown: break
+        }
+
+        switch layoutDirection {
+        case .leftToRight: attributes.append(LayoutDirection.leftToRight)
+        case .rightToLeft: attributes.append(LayoutDirection.rightToLeft)
+        case .unspecified: break
+        }
+
+        switch preferredContentSizeCategory {
+        case .extraSmall: attributes.append(SizeCategory.extraSmall)
+        case .small: attributes.append(SizeCategory.small)
+        case .medium: attributes.append(SizeCategory.medium)
+        case .large: attributes.append(SizeCategory.large)
+        case .extraLarge: attributes.append(SizeCategory.extraLarge)
+        case .extraExtraLarge: attributes.append(SizeCategory.extraExtraLarge)
+        case .extraExtraExtraLarge: attributes.append(SizeCategory.extraExtraExtraLarge)
+        case .accessibilityMedium: attributes.append(SizeCategory.accessibilityMedium)
+        case .accessibilityLarge: attributes.append(SizeCategory.accessibilityLarge)
+        case .accessibilityExtraLarge: attributes.append(SizeCategory.accessibilityExtraLarge)
+        case .accessibilityExtraExtraLarge: attributes.append(SizeCategory.accessibilityExtraExtraLarge)
+        case .accessibilityExtraExtraExtraLarge: attributes.append(SizeCategory.accessibilityExtraExtraExtraLarge)
+        default: break
+        }
+
+        switch displayGamut {
+        case .SRGB: attributes.append(DisplayGamut.SRGB)
+        case .P3: attributes.append(DisplayGamut.P3)
+        case .unspecified: break
         }
         
         return attributes

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6024DFAC1F9FC72B007710C2 /* LayoutDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6024DFAB1F9FC72B007710C2 /* LayoutDirection.swift */; };
+		6024DFAE1F9FC883007710C2 /* SizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6024DFAD1F9FC883007710C2 /* SizeCategory.swift */; };
+		6024DFB01F9FCA00007710C2 /* DisplayGamut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6024DFAF1F9FCA00007710C2 /* DisplayGamut.swift */; };
 		60E2D4A51D5A76A100B4ADE2 /* Briggs.h in Headers */ = {isa = PBXBuildFile; fileRef = 60E2D4A41D5A76A100B4ADE2 /* Briggs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60E2D4B51D5A788500B4ADE2 /* AdaptiveAttributeTraitCollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D4B01D5A788500B4ADE2 /* AdaptiveAttributeTraitCollectionExtension.swift */; };
 		60E2D4B61D5A788500B4ADE2 /* ForceTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D4B11D5A788500B4ADE2 /* ForceTouch.swift */; };
@@ -25,6 +28,9 @@
 		6003FBE31DAEC6CA000BB2FD /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6003FBE41DAEC6CA000BB2FD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6003FBE61DAED2FA000BB2FD /* Briggs.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Briggs.podspec; sourceTree = "<group>"; };
+		6024DFAB1F9FC72B007710C2 /* LayoutDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDirection.swift; sourceTree = "<group>"; };
+		6024DFAD1F9FC883007710C2 /* SizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCategory.swift; sourceTree = "<group>"; };
+		6024DFAF1F9FCA00007710C2 /* DisplayGamut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayGamut.swift; sourceTree = "<group>"; };
 		60E2D4A11D5A76A100B4ADE2 /* Briggs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Briggs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E2D4A41D5A76A100B4ADE2 /* Briggs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Briggs.h; sourceTree = "<group>"; };
 		60E2D4A61D5A76A100B4ADE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				60E2D4B21D5A788500B4ADE2 /* Idiom.swift */,
 				60E2D4B31D5A788500B4ADE2 /* Scale.swift */,
 				60E2D4B41D5A788500B4ADE2 /* SizeClass.swift */,
+				6024DFAB1F9FC72B007710C2 /* LayoutDirection.swift */,
+				6024DFAD1F9FC883007710C2 /* SizeCategory.swift */,
+				6024DFAF1F9FCA00007710C2 /* DisplayGamut.swift */,
 			);
 			name = "Adaptive Attributes";
 			sourceTree = "<group>";
@@ -166,7 +175,7 @@
 				TargetAttributes = {
 					60E2D4A01D5A76A100B4ADE2 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -204,6 +213,7 @@
 			files = (
 				60E2D4B71D5A788500B4ADE2 /* Idiom.swift in Sources */,
 				60E2D4C51D5A789C00B4ADE2 /* AdaptiveInterface.swift in Sources */,
+				6024DFAE1F9FC883007710C2 /* SizeCategory.swift in Sources */,
 				60E2D4BE1D5A789400B4ADE2 /* AdaptiveConstraintContainer.swift in Sources */,
 				60E2D4C31D5A789C00B4ADE2 /* AdaptiveAttribute.swift in Sources */,
 				60E2D4BF1D5A789400B4ADE2 /* AdaptiveViewContainer.swift in Sources */,
@@ -212,7 +222,9 @@
 				60E2D4B91D5A788500B4ADE2 /* SizeClass.swift in Sources */,
 				60E2D4B51D5A788500B4ADE2 /* AdaptiveAttributeTraitCollectionExtension.swift in Sources */,
 				60E2D4B81D5A788500B4ADE2 /* Scale.swift in Sources */,
+				6024DFB01F9FCA00007710C2 /* DisplayGamut.swift in Sources */,
 				60E2D4B61D5A788500B4ADE2 /* ForceTouch.swift in Sources */,
+				6024DFAC1F9FC72B007710C2 /* LayoutDirection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -304,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -328,13 +340,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.auswahlaxiom.Briggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -350,12 +363,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.auswahlaxiom.Briggs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

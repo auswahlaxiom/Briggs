@@ -1,5 +1,5 @@
 //
-//  ForceTouch.swift
+//  LayoutDirection.swift
 //  Briggs
 //
 //  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
@@ -9,10 +9,10 @@
 //  in the Software without restriction, including without limitation the rights
 //  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 //  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions://  
+//  furnished to do so, subject to the following conditions://
 //
 //  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.//  
+//  all copies or substantial portions of the Software.//
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -26,24 +26,24 @@
 import UIKit
 
 /**
- `AdaptiveAttribute` correlating to `UITraitCollection.init(forceTouchCapability capability: UIForceTouchCapability)`
+ `AdaptiveAttribute` correlating to `init(layoutDirection: UITraitEnvironmentLayoutDirection)`
  */
-public enum ForceTouch: AdaptiveAttribute {
+public enum LayoutDirection: AdaptiveAttribute {
 
-    /// Correlates to `UITraitCollection(forceTouchCapability: .unavailable)
-    case unavailable
-    /// Corelates to `UITraitCollection(forceTouchCapability: .available)
-    case available
+    /// Corelates to `UITraitCollection(layoutDirection: .leftToRight)`
+    case leftToRight
+    /// Corelates to `UITraitCollection(layoutDirection: .rightToLeft)`
+    case rightToLeft
 
     /**
-     Creates `UITraitCollection` with correlating `UIForceTouchCapability`
+     Creates `UITraitCollection` with correlating `UIUserInterfaceLayoutDirection`
 
-     - returns: New `UITraitCollection` with correlating `forceTouchCapability`
+     - returns: New `UITraitCollection` with correlating `layoutDirection`
      */
     public func generateTraitCollection() -> UITraitCollection {
         switch self {
-        case .unavailable: return UITraitCollection(forceTouchCapability: .unavailable)
-        case .available: return UITraitCollection(forceTouchCapability: .available)
+        case .leftToRight: return UITraitCollection(layoutDirection: .leftToRight)
+        case .rightToLeft: return UITraitCollection(layoutDirection: .rightToLeft)
         }
     }
 }

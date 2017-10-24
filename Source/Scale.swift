@@ -2,7 +2,7 @@
 //  Scale.swift
 //  Briggs
 //
-//  Copyright (c) 2016 Ada Turner (https://github.com/auswahlaxiom)
+//  Copyright (c) 2017 Ada Turner (https://github.com/auswahlaxiom)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ public enum Scale: AdaptiveAttribute {
     case twoX
     /// Corelates to `UITraitCollection(displayScale: 3.0)`
     case threeX
-    /// Corelates to `UITraitCollection(displayScale: 4.0)`
+    /// SO FUTURE!!! Corelates to `UITraitCollection(displayScale: 4.0)`
     case fourX
 
     /**
