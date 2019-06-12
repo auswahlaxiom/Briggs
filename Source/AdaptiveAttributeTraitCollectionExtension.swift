@@ -36,7 +36,7 @@ public extension UITraitCollection {
      - parameter attributes: Array of `AdaptiveAttribute` from which a new `UITraitCollection` will be created
      - returns: A new `UITraitCollection` containing the traits of each `AdaptiveAttribute`
      */
-    public static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
+    static func create(with attributes: [AdaptiveAttribute]) -> UITraitCollection {
         let traitCollections = attributes.map { $0.generateTraitCollection() }
         return self.init(traitsFrom: traitCollections)
     }
@@ -47,14 +47,14 @@ public extension UITraitCollection {
      - parameter attribute: The `AdaptiveAttribute` we want to find in the `UITraitCollection`
      - returns: Returns `true` if the `UITraitCollection` contains the `AdaptiveAttribute`, else, `false`
      */
-    public func contains(_ attribute: AdaptiveAttribute) -> Bool {
+    func contains(_ attribute: AdaptiveAttribute) -> Bool {
         return containsTraits(in: attribute.generateTraitCollection())
     }
 
     /**
      Array of `AdaptiveAttribute`s that describe the `self`
      */
-    public var adaptiveAttributes: [AdaptiveAttribute] {
+    var adaptiveAttributes: [AdaptiveAttribute] {
         var attributes: [AdaptiveAttribute] = []
 
         switch userInterfaceIdiom {
@@ -63,6 +63,7 @@ public extension UITraitCollection {
         case .tv: attributes.append(Idiom.tv)
         case .carPlay: attributes.append(Idiom.carPlay)
         case .unspecified: break
+        @unknown default: break
         }
 
         switch displayScale {
@@ -77,24 +78,28 @@ public extension UITraitCollection {
         case .compact: attributes.append(SizeClass.horizontalCompact)
         case .regular: attributes.append(SizeClass.horizontalRegular)
         case .unspecified: break
+        @unknown default: break
         }
 
         switch verticalSizeClass {
         case .compact: attributes.append(SizeClass.verticalCompact)
         case .regular: attributes.append(SizeClass.verticalRegular)
         case .unspecified: break
+        @unknown default: break
         }
 
         switch forceTouchCapability {
         case .available: attributes.append(ForceTouch.available)
         case .unavailable: attributes.append(ForceTouch.unavailable)
         case .unknown: break
+        @unknown default: break
         }
 
         switch layoutDirection {
         case .leftToRight: attributes.append(LayoutDirection.leftToRight)
         case .rightToLeft: attributes.append(LayoutDirection.rightToLeft)
         case .unspecified: break
+        @unknown default: break
         }
 
         switch preferredContentSizeCategory {
@@ -117,6 +122,7 @@ public extension UITraitCollection {
         case .SRGB: attributes.append(DisplayGamut.SRGB)
         case .P3: attributes.append(DisplayGamut.P3)
         case .unspecified: break
+        @unknown default: break
         }
         
         return attributes
