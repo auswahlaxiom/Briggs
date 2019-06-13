@@ -125,6 +125,42 @@ public extension UITraitCollection {
         @unknown default: break
         }
         
+        if #available(iOS 12.0, *) {
+            switch userInterfaceStyle {
+            case .light: attributes.append(UserInterfaceStyle.light)
+            case .dark: attributes.append(UserInterfaceStyle.dark)
+            case .unspecified: break
+            @unknown default: break
+            }
+        }
+        
+        if #available(iOS 13.0, *) {
+            switch userInterfaceLevel {
+            case .base: attributes.append(UserInterfaceLevel.base)
+            case .elevated: attributes.append(UserInterfaceLevel.elevated)
+            case .unspecified: break
+            @unknown default: break
+            }
+        }
+        
+        if #available(iOS 13.0, *) {
+            switch accessibilityContrast {
+            case .normal: attributes.append(AccessibilityContrast.normal)
+            case .high: attributes.append(AccessibilityContrast.high)
+            case .unspecified: break
+            @unknown default: break
+            }
+        }
+        
+        if #available(iOS 13.0, *) {
+            switch legibilityWeight {
+            case .regular: attributes.append(LegibilityWeight.regular)
+            case .bold: attributes.append(LegibilityWeight.bold)
+            case .unspecified: break
+            @unknown default: break
+            }
+        }
+        
         return attributes
     }
 }
