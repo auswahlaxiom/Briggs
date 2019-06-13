@@ -22,6 +22,10 @@
 		60E2D4C31D5A789C00B4ADE2 /* AdaptiveAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D4C01D5A789C00B4ADE2 /* AdaptiveAttribute.swift */; };
 		60E2D4C41D5A789C00B4ADE2 /* AdaptiveElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D4C11D5A789C00B4ADE2 /* AdaptiveElement.swift */; };
 		60E2D4C51D5A789C00B4ADE2 /* AdaptiveInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D4C21D5A789C00B4ADE2 /* AdaptiveInterface.swift */; };
+		DC8F15A722B23A530052E0C2 /* UserInterfaceStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15A622B23A530052E0C2 /* UserInterfaceStyle.swift */; };
+		DC8F15A922B23BC60052E0C2 /* UserInterfaceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15A822B23BC60052E0C2 /* UserInterfaceLevel.swift */; };
+		DC8F15AB22B23CAE0052E0C2 /* AccessibilityContrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15AA22B23CAE0052E0C2 /* AccessibilityContrast.swift */; };
+		DC8F15AD22B23D670052E0C2 /* LegibilityWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15AC22B23D670052E0C2 /* LegibilityWeight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		60E2D4C01D5A789C00B4ADE2 /* AdaptiveAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveAttribute.swift; sourceTree = "<group>"; };
 		60E2D4C11D5A789C00B4ADE2 /* AdaptiveElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveElement.swift; sourceTree = "<group>"; };
 		60E2D4C21D5A789C00B4ADE2 /* AdaptiveInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveInterface.swift; sourceTree = "<group>"; };
+		DC8F15A622B23A530052E0C2 /* UserInterfaceStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceStyle.swift; sourceTree = "<group>"; };
+		DC8F15A822B23BC60052E0C2 /* UserInterfaceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceLevel.swift; sourceTree = "<group>"; };
+		DC8F15AA22B23CAE0052E0C2 /* AccessibilityContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityContrast.swift; sourceTree = "<group>"; };
+		DC8F15AC22B23D670052E0C2 /* LegibilityWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegibilityWeight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,10 @@
 				6024DFAB1F9FC72B007710C2 /* LayoutDirection.swift */,
 				6024DFAD1F9FC883007710C2 /* SizeCategory.swift */,
 				6024DFAF1F9FCA00007710C2 /* DisplayGamut.swift */,
+				DC8F15A622B23A530052E0C2 /* UserInterfaceStyle.swift */,
+				DC8F15A822B23BC60052E0C2 /* UserInterfaceLevel.swift */,
+				DC8F15AA22B23CAE0052E0C2 /* AccessibilityContrast.swift */,
+				DC8F15AC22B23D670052E0C2 /* LegibilityWeight.swift */,
 			);
 			name = "Adaptive Attributes";
 			sourceTree = "<group>";
@@ -214,15 +226,19 @@
 			files = (
 				60E2D4B71D5A788500B4ADE2 /* Idiom.swift in Sources */,
 				60E2D4C51D5A789C00B4ADE2 /* AdaptiveInterface.swift in Sources */,
+				DC8F15AB22B23CAE0052E0C2 /* AccessibilityContrast.swift in Sources */,
 				6024DFAE1F9FC883007710C2 /* SizeCategory.swift in Sources */,
 				60E2D4BE1D5A789400B4ADE2 /* AdaptiveConstraintContainer.swift in Sources */,
 				60E2D4C31D5A789C00B4ADE2 /* AdaptiveAttribute.swift in Sources */,
 				60E2D4BF1D5A789400B4ADE2 /* AdaptiveViewContainer.swift in Sources */,
 				60E2D4C41D5A789C00B4ADE2 /* AdaptiveElement.swift in Sources */,
 				60E2D4BD1D5A789400B4ADE2 /* AdaptiveBehavior.swift in Sources */,
+				DC8F15AD22B23D670052E0C2 /* LegibilityWeight.swift in Sources */,
 				60E2D4B91D5A788500B4ADE2 /* SizeClass.swift in Sources */,
 				60E2D4B51D5A788500B4ADE2 /* AdaptiveAttributeTraitCollectionExtension.swift in Sources */,
 				60E2D4B81D5A788500B4ADE2 /* Scale.swift in Sources */,
+				DC8F15A922B23BC60052E0C2 /* UserInterfaceLevel.swift in Sources */,
+				DC8F15A722B23A530052E0C2 /* UserInterfaceStyle.swift in Sources */,
 				6024DFB01F9FCA00007710C2 /* DisplayGamut.swift in Sources */,
 				60E2D4B61D5A788500B4ADE2 /* ForceTouch.swift in Sources */,
 				6024DFAC1F9FC72B007710C2 /* LayoutDirection.swift in Sources */,
