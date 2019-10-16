@@ -26,6 +26,7 @@
 		DC8F15A922B23BC60052E0C2 /* UserInterfaceLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15A822B23BC60052E0C2 /* UserInterfaceLevel.swift */; };
 		DC8F15AB22B23CAE0052E0C2 /* AccessibilityContrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15AA22B23CAE0052E0C2 /* AccessibilityContrast.swift */; };
 		DC8F15AD22B23D670052E0C2 /* LegibilityWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F15AC22B23D670052E0C2 /* LegibilityWeight.swift */; };
+		DCB0E97223570D38000A6126 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0E97123570D38000A6126 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		DC8F15A822B23BC60052E0C2 /* UserInterfaceLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInterfaceLevel.swift; sourceTree = "<group>"; };
 		DC8F15AA22B23CAE0052E0C2 /* AccessibilityContrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityContrast.swift; sourceTree = "<group>"; };
 		DC8F15AC22B23D670052E0C2 /* LegibilityWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegibilityWeight.swift; sourceTree = "<group>"; };
+		DCB0E97123570D38000A6126 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				6003FBE31DAEC6CA000BB2FD /* LICENSE */,
 				6003FBE41DAEC6CA000BB2FD /* README.md */,
 				6003FBE61DAED2FA000BB2FD /* Briggs.podspec */,
+				DCB0E97123570D38000A6126 /* Package.swift */,
 				60E2D4A31D5A76A100B4ADE2 /* Source */,
 				60E2D4A21D5A76A100B4ADE2 /* Products */,
 			);
@@ -228,6 +231,7 @@
 				60E2D4C51D5A789C00B4ADE2 /* AdaptiveInterface.swift in Sources */,
 				DC8F15AB22B23CAE0052E0C2 /* AccessibilityContrast.swift in Sources */,
 				6024DFAE1F9FC883007710C2 /* SizeCategory.swift in Sources */,
+				DCB0E97223570D38000A6126 /* Package.swift in Sources */,
 				60E2D4BE1D5A789400B4ADE2 /* AdaptiveConstraintContainer.swift in Sources */,
 				60E2D4C31D5A789C00B4ADE2 /* AdaptiveAttribute.swift in Sources */,
 				60E2D4BF1D5A789400B4ADE2 /* AdaptiveViewContainer.swift in Sources */,
